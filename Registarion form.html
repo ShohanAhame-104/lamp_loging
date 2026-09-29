@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="lamp-fixture" id="lampfixture" title="Click to turn on/off the lamp">
+                    <div class="lamp-shade"><p style="padding: 20px; color: #ffd43b;">Click me!</p>
+                        <div class="lamp-blub">
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration form -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-wrapper" id="formWrapper">
+                    <div class="card">
+                        <div class="card-header w-100">
+                            <h2>Registartion Form</h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="">
+
+                                <label for="firstname">First name:</label>
+                                <input type="text" id="firstname" class="form-control" placeholder="Enter first name">
+
+                                <label for="lastname">Last name:</label>
+                                <input type="text" id="lastname" class="form-control" placeholder="Enter last name">
+
+                                <label for="number">Contact number:</label>
+                                <input type="number" id="number" class="form-control" placeholder="Enter a valid nmbr">
+
+                                <label for="email">Email:</label>
+                                <input type="text" id="email" class="form-control" placeholder="email">
+
+                                <label for="Password">Password:</label>
+                                <input type="password" id="Password" class="form-control" placeholder="Password">
+                                <input type="submit" id="button" value="submit" class="btn my-2" onclick="login()">
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        const lampfixture = document.querySelector('#lampfixture');
+        const formWrapper = document.getElementById('formWrapper');
+        const bodyTag = document.body;
+
+        lampfixture.addEventListener('click', function(){
+            const isOn = lampfixture.classList.toggle('on');
+
+            if (isOn){
+                formWrapper.classList.add('visible');
+                bodyTag.classList.add('room-lit');
+            }
+            else{
+                  formWrapper.classList.remove('visible');
+                bodyTag.classList.remove('room-lit');
+            }
+        })
+        function login() {
+            alert('from submitted successfully');
+        }
+
+    </script>
+</body>
+</html>
